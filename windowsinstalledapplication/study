@@ -17,3 +17,16 @@ https://blogs.technet.microsoft.com/heyscriptingguy/2013/11/15/use-powershell-to
 SANS Institute
 InfoSec Reading Room
 Windows Installed Software Inventory
+
+Get-RegistryValueData -ComputerName Server01, Member01, test -RegistryHive LocalMachine -RegistryKeyPath SYSTEM\CurrentControlSet\Services\USBSTOR -ValueName Start
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\Misc.
+Get-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\Misc.' -Name ProgramVer | select ProgramVer
+Invoke-Command -ComputerName PC, Server01 {Get-ItemProperty -Path 'HKLM:\SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\Misc.' -Name ProgramVer | select ProgramVer}
+REG QUERY HKLM\SOFTWARE\Wow6432Node\TrendMicro\PC-cillinNTCorp\CurrentVersion\Misc. /v ProgramVer
+http://vcloud-lab.com/entries/powershell/powershell-get-registry-value-data
+
+REG QUERY
+https://www.windowscentral.com/how-edit-registry-using-command-prompt-windows-10
+
+Checking the product version, build, pattern file and scan engine versions, and activation code of OfficeScan
+https://success.trendmicro.com/solution/1054835-checking-the-product-version-build-pattern-file-and-scan-engine-versions-and-activation-code-of-o#collapseOne
